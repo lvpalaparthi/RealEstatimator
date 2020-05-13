@@ -275,11 +275,11 @@ for x in range(1, half_bathrooms+1):
 prop_sqft_remaining = prop_sqft_remaining - hbath_total_sqft
 totalValue = totalValue + hbath_total_value
 print(totalValue)
-END HALF BATHROOMS
+#END HALF BATHROOMS
 
 
 
-KITCHEN
+#KITCHEN
 kitchen_sqft = int(input("Enter the square footage of the kitchen: "))
 while True:
     try:
@@ -338,7 +338,7 @@ prop_sqft_remaining = prop_sqft_remaining - kitchen_sqft
 
 totalValue = totalValue + switch_kitchen_condition(kitchen_condition) + switch_kitchen_floor_material(kitchen_floor_material) + switch_kitchen_counter_material(kitchen_ctop_material)
 print(totalValue)
-END KITCHEN
+#END KITCHEN
 
 
 
@@ -566,7 +566,7 @@ def switch_driveway_value(driveway_condition):
 driveway_value =  switch_driveway_value(driveway_condition)
 totalValue = totalValue + driveway_value
 print(totalValue)
-END OF DRIVEWAY
+#END OF DRIVEWAY
 
 
 
