@@ -1,3 +1,4 @@
+import json
 ## Property Value Estimator 
 ## Takes in user int(input regarding all property details individually to compute the property estimate
 ## Square foot value is determined by the type of room (bedroom, kitchen, bathroom, etc and then the additional sq footage of the house is estimated as the basic sq ft value dependent on condition)
@@ -655,7 +656,7 @@ print(totalValue)
 #In Bear, DE there isn't a very large difference in the type of view each house has. There's no ocean, lake, mountain, large hill, river, skyline in the area.
 
 #WATER TYPE
-water_type = heat_type = input("Please enter if the water/sewage system is 'town' or a 'septic+well'\n")
+water_type =input("Please enter if the water/sewage system is 'town' or a 'septic+well'\n")
 if(water_type == "septic+well"):
    totalValue = totalValue-1000
 print(totalValue)
@@ -800,3 +801,48 @@ print(totalValue)
     
 #AT THE END I THINK WE SHOULD PULL THE BEST AND CLOSEST COMPS AND THEN DO SOME FORM OF A COMPARATOR TO ADJUST OUR ESTIMATE BEFORE IT OUTPUTS.
 print (" Thank you for filling in the details! The estimated total Value of the property: $", totalValue)
+
+data = {}
+data['Results'] = []
+data['Results'].append({
+    "zipcode" : zipcode,
+    "property type": prop_type,
+    "year built": year_built,
+    "property value": prop_value,
+    "property sqft": prop_sqft,
+    "lot sqft": lot_sqft,
+    "bedrooms": bedrooms,
+    "full bathrooms": full_bathrooms,
+    "half_bathrooms": half_bathrooms,
+    "kitchen sqft": kitchen_sqft,
+    "basement": basement,
+    "roof type": roof_type,
+    "washer" : washer,
+    "dryer" : dryer,
+    "dishwasher" : dishwasher,
+    "fridge": fridge,
+    "microwave":microwave,
+    "stove":stove,
+    "kicthen match": kitchen_match,
+    "washer dryer match":washer_dryer_match,
+    "pool":pool,
+    "pool install":pool_install,
+    "hot tub":hot_tub,
+    "driveway" : driveway,
+    "garage" : garage,
+    "garage install" : garage_install,
+    "AC type": AC_type,
+    "heat type": heat_type,
+    "fireplaces": fireplaces,
+    "electric system": electric_system,
+    "water type": water_type,
+    "foundation material" : foundation_material,
+    "porch" : porch,
+    "patio" : patio,
+    "yard" : yard,
+    "additional factors" : additional_factors,
+    "Total Value" : totalValue
+
+})
+with open("results.json", "w") as outfile:
+    json.dump(data, outfile)
