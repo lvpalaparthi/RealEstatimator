@@ -2,6 +2,16 @@ import json
 
 totalValue = 0
 zipcode = int(input("Please confirm the property's zipcode: "))
+while True:
+    try:
+        roof_type = int(input("Choose the roof type\n(0) Slate Tile\n(1) Clay Tile\n(2) Copper\n(3) Other Metals\n(4) Wood Shingle\n(5) Fiber Cement Shingles\n(6) Asphalt Shingles\n(7) Other\n\n"))
+        roof_arr = ['Slate Tile', 'Clay Tile', 'Copper', 'Other Metals', 'Wood Shingle', 'Fiber Cement Shingles','Asphalt ShinglesOther']
+        roof_type_json = roof_arr[roof_type]
+        if roof_type in range(8):
+            break
+    except:
+        pass
+    print('\nIncorrect input, try again!')
 #AC TYPE        
 AC_type = int(input("Choose the AC type\n(0) Window Units\n(1) House Fan\n(2) Central Air\n(3) Ductless Mini-Split AC\n(4) Geothermal\n(5) Other\n\n"))         
 if(AC_type == 5):
@@ -49,6 +59,7 @@ data = {}
 data['Results'] = []
 data['Results'].append({
     "zipcode" : zipcode,
+    "roof_type" : roof_type_json,
     "AC type": AC_type,
     "heat type": heat_type,
     "fireplaces": fireplaces
@@ -95,6 +106,7 @@ with open("results.json", "w") as outfile:
 #     "yard" : yard,
 #     "additional factors" : additional_factors,
 #     "Total Value" : totalValue
+
 
 
     
