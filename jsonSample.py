@@ -4,10 +4,10 @@ totalValue = 0
 zipcode = int(input("Please confirm the property's zipcode: "))
 while True:
     try:
-        roof_type = int(input("Choose the roof type\n(0) Slate Tile\n(1) Clay Tile\n(2) Copper\n(3) Other Metals\n(4) Wood Shingle\n(5) Fiber Cement Shingles\n(6) Asphalt Shingles\n(7) Other\n\n"))
+        roof_type_init = int(input("Choose the roof type\n(0) Slate Tile\n(1) Clay Tile\n(2) Copper\n(3) Other Metals\n(4) Wood Shingle\n(5) Fiber Cement Shingles\n(6) Asphalt Shingles\n(7) Other\n\n"))
         roof_arr = ['Slate Tile', 'Clay Tile', 'Copper', 'Other Metals', 'Wood Shingle', 'Fiber Cement Shingles','Asphalt ShinglesOther']
-        roof_type_json = roof_arr[roof_type]
-        if roof_type in range(8):
+        roof_type_json = roof_arr[roof_type_init]
+        if roof_type_init in range(8):
             break
     except:
         pass

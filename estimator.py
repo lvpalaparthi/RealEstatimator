@@ -14,6 +14,8 @@ zipcode = int(input("Please confirm the property's zipcode: "))
 while True:
     try:
         prop_type = int(input("Choose the property type:\n(0) Single Family Home\n(1) Duplex\n(2) Triplex\n(3) Manufactured\n(4) Townhouse\n(5) Condo\n(6) Mobile Home\n(7) Apartment\n\n"))
+        prop_type_arr = ['Single Family Home','Duplex','Triplex','Manufactured', 'Townhouse','Condo', 'Mobile Home', 'Apartment']
+        prop_type_str = prop_type_arr[prop_type]
         if prop_type in range(8):
             break
     except:
@@ -46,6 +48,8 @@ print(totalValue)
 while True:
     try:
         prop_condition = int(input("Choose the current property condition:\n(0) Poor\n(1) Average\n(2) Good\n(3) Excellent\n\n"))
+        prop_cond_arr = ['Poor', 'Average', 'Good','Excellent']
+        prop_type_str = prop_cond_arr[prop_type_str]
         if prop_condition in range(4):
             break
     except:
@@ -402,6 +406,8 @@ roof_age = int(input("How old is the roof (enter a number rounded to nearest yea
 while True:
     try:
         roof_type = int(input("Choose the roof type\n(0) Slate Tile\n(1) Clay Tile\n(2) Copper\n(3) Other Metals\n(4) Wood Shingle\n(5) Fiber Cement Shingles\n(6) Asphalt Shingles\n(7) Other\n\n"))
+        roof_arr = ['Slate Tile', 'Clay Tile', 'Copper', 'Other Metals', 'Wood Shingle', 'Fiber Cement Shingles','Asphalt ShinglesOther']
+        roof_type_str = roof_arr[roof_type]
         if roof_type in range(8):
             break
     except:
@@ -600,7 +606,9 @@ print(totalValue)
 
 
 #AC TYPE        
-AC_type = int(input("Choose the AC type\n(0) Window Units\n(1) House Fan\n(2) Central Air\n(3) Ductless Mini-Split AC\n(4) Geothermal\n(5) Other\n\n"))         
+AC_type = int(input("Choose the AC type\n(0) Window Units\n(1) House Fan\n(2) Central Air\n(3) Ductless Mini-Split AC\n(4) Geothermal\n(5) Other\n\n"))
+AC_arr = ['Window Units','House Fan','Central Air','Ductless Mini-Split AC','Geothermal', 'Other']
+AC_type_str = AC_arr[AC_type]         
 if(AC_type == 5):
    AC_other = input("Enter the AC type that the property contains: ")
 def switch_AC(AC_type):
@@ -620,6 +628,8 @@ print(totalValue)
 
 #HEAT TYPE
 heat_type = int(input("Choose the heat type\n(0) Boiler\n(1) Furnace\n(2) Standard Heat Pump\n(3) Mini Split Heat Pump\n(4) Geothermal\n(5) Other\n\n"))
+heat_arr=['Boiler', 'Furnace', 'Standard Heat Pump', 'Mini Split Heat Pump', 'Geothermal', 'Other']
+heat_type_str = heat_arr[heat_type]
 if(heat_type == 5):
    heat_other = input("Enter the heat type that the property contains: ")
 def switch_Heat(heat_type):
@@ -666,6 +676,8 @@ print(totalValue)
 while True:
     try:
         foundation_material = int(input("Choose the foundation material\n(0) Stone\n(1) Brick\n(2) Preservative treated lumber\n(3) Concrete Block\n(4) Poured Concrete\n(5) Other\n\n"))
+        foundation_arr = ['Stone', 'Brick', 'Preservative treated lumber', 'Concrete Block', 'Poured Concrete', 'Other']
+        foundation_material_str = foundation_arr[foundation_material]
         if foundation_material in range(6):
             break
     except:
@@ -806,7 +818,7 @@ data = {}
 data['Results'] = []
 data['Results'].append({
     "zipcode" : zipcode,
-    "property type": prop_type,
+    "property type": prop_type_str,
     "year built": year_built,
     "property value": prop_value,
     "property sqft": prop_sqft,
@@ -816,7 +828,7 @@ data['Results'].append({
     "half_bathrooms": half_bathrooms,
     "kitchen sqft": kitchen_sqft,
     "basement": basement,
-    "roof type": roof_type,
+    "roof type": roof_type_str,
     "washer" : washer,
     "dryer" : dryer,
     "dishwasher" : dishwasher,
@@ -831,12 +843,12 @@ data['Results'].append({
     "driveway" : driveway,
     "garage" : garage,
     "garage install" : garage_install,
-    "AC type": AC_type,
-    "heat type": heat_type,
+    "AC type": AC_type_str,
+    "heat type": heat_type_str,
     "fireplaces": fireplaces,
     "electric system": electric_system,
     "water type": water_type,
-    "foundation material" : foundation_material,
+    "foundation material" : foundation_material_str,
     "porch" : porch,
     "patio" : patio,
     "yard" : yard,
