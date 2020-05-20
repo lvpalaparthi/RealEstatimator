@@ -288,7 +288,7 @@ while True:
     try:
         prop_condition = int(input("Choose the current property condition:\n(0) Poor\n(1) Average\n(2) Good\n(3) Excellent\n\n"))
         prop_cond_arr = ['Poor', 'Average', 'Good','Excellent']
-        prop_type_str = prop_cond_arr[prop_type_str]
+        prop_type_str = prop_cond_arr[prop_condition]
         if prop_condition in range(4):
             break
     except:
